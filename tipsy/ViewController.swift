@@ -25,6 +25,8 @@ class ViewController: UIViewController {
 
     let currencyFormatter = NumberFormatter()
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Rounded corners on caculated totals
@@ -36,9 +38,6 @@ class ViewController: UIViewController {
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.numberStyle = .currency
         currencyFormatter.locale = Locale.current;
-        
-        // Select bill input when app opens
-        billInput.becomeFirstResponder()
 
         reset()
         billInput.text = Locale.current.currencySymbol
@@ -46,7 +45,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let defaults = UserDefaults.standard
+        print("view will appear")
         
         // Default tipping options
         UserDefaults.standard.register(defaults: ["tipOption0" : 10])
@@ -60,8 +59,49 @@ class ViewController: UIViewController {
         tipSelect.setTitle(defaults.string(forKey: "tipOption2")! + "%", forSegmentAt: 2)
         tipSelect.setTitle(defaults.string(forKey: "tipOption3")! + "%", forSegmentAt: 3)
         
+        // Retrieve saved input if less than 10 minutes ago
+        let lastTime = defaults.double(forKey: "lastTime")
+        if (Date().timeIntervalSince1970 - lastTime < 600) {
+            billInput.text = defaults.string(forKey: "bill")
+            partyStepper.value = defaults.double(forKey: "partySize")
+            tipSelect.selectedSegmentIndex = defaults.integer(forKey: "tipIndex")
+        } else {
+            /* Select bill input when app opens. This wipes its input, so this only
+               happens when previous input isn't loaded */
+            billInput.becomeFirstResponder()
+        }
+        
         // Calculate tip
         calc(true)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // UI Fade-In effect
+        self.billInput.alpha = 0
+        self.totalLabel.alpha = 0
+        self.totalPartyLabel.alpha = 0
+        self.tipLabel.alpha = 0
+        self.partyLabel.alpha = 0
+        self.totalView.alpha = 0
+        self.tipView.alpha = 0
+        self.totalPersonView.alpha = 0
+        self.tipSelect.alpha = 0
+        self.partyStepper.alpha = 0
+
+        UIView.animate(withDuration: 0.5) {
+            self.billInput.alpha = 1.0
+            self.totalLabel.alpha = 1.0
+            self.totalPartyLabel.alpha = 1.0
+            self.tipLabel.alpha = 1.0
+            self.partyLabel.alpha = 1.0
+            self.totalView.alpha = 1.0
+            self.tipView.alpha = 1.0
+            self.totalPersonView.alpha = 1.0
+            self.tipSelect.alpha = 1.0
+            self.partyStepper.alpha = 1.0
+        }
     }
 
     /**
@@ -94,6 +134,13 @@ class ViewController: UIViewController {
         totalLabel.text = currencyFormatter.string(from: NSNumber(value: total))!
         totalPartyLabel.text = currencyFormatter.string(from: NSNumber(value: totalParty))!
         partyLabel.text = String(format:"%.0f", partySize)
+        
+        // Save inputs
+        defaults.set(bill, forKey: "bill")
+        defaults.set(partySize, forKey: "partySize")
+        defaults.set(tipSelect.selectedSegmentIndex, forKey: "tipIndex")
+        defaults.set(Date().timeIntervalSince1970, forKey: "lastTime")
+        defaults.synchronize()
         
     }
     
