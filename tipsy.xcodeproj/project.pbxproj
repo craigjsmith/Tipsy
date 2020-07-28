@@ -36,7 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		44107BFD24CF4E8A00BDB6FD /* tipsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tipsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		44107BFD24CF4E8A00BDB6FD /* Tipsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tipsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44107C0024CF4E8A00BDB6FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44107C0224CF4E8A00BDB6FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		44107C0424CF4E8A00BDB6FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 		44107BFE24CF4E8A00BDB6FD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				44107BFD24CF4E8A00BDB6FD /* tipsy.app */,
+				44107BFD24CF4E8A00BDB6FD /* Tipsy.app */,
 				44107C1324CF4E8B00BDB6FD /* tipsyTests.xctest */,
 				44107C1E24CF4E8B00BDB6FD /* tipsyUITests.xctest */,
 			);
@@ -148,7 +148,7 @@
 			);
 			name = tipsy;
 			productName = tipsy;
-			productReference = 44107BFD24CF4E8A00BDB6FD /* tipsy.app */;
+			productReference = 44107BFD24CF4E8A00BDB6FD /* Tipsy.app */;
 			productType = "com.apple.product-type.application";
 		};
 		44107C1224CF4E8B00BDB6FD /* tipsyTests */ = {
@@ -446,7 +446,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = craigsmith.dev.tipsy;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Tipsy;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -464,7 +464,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = craigsmith.dev.tipsy;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Tipsy;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

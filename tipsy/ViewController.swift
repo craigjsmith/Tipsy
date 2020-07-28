@@ -41,6 +41,7 @@ class ViewController: UIViewController {
         billInput.becomeFirstResponder()
 
         reset()
+        billInput.text = Locale.current.currencySymbol
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -127,7 +128,6 @@ class ViewController: UIViewController {
         tipLabel.text = currencyFormatter.string(from: NSNumber(value: 0))!
         totalLabel.text = currencyFormatter.string(from: NSNumber(value: 0))!
         totalPartyLabel.text = currencyFormatter.string(from: NSNumber(value: 0))!
-        billInput.text = Locale.current.currencySymbol
     }
     
 }

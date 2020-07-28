@@ -10,7 +10,7 @@
         <!--Tipsy-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="tipsy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tipsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,7 +86,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.43523424859999998" green="0.59839910269999996" blue="0.42350387569999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.3959073722" green="0.67025446889999996" blue="0.36465013029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fpa-pe-J6H">
                                 <rect key="frame" x="16" y="549" width="343" height="96"/>
@@ -107,7 +107,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.49351245160000001" green="0.68991982939999996" blue="0.38425734639999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.16470588235294117" green="0.51372549019607838" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RM0-So-Orm">
                                 <rect key="frame" x="192" y="445" width="167" height="96"/>
@@ -128,7 +128,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.73794225936176006" green="0.78696065989847719" blue="0.62959878690819515" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.27058823529411763" green="0.74117647058823533" blue="0.63529411764705879" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -172,7 +172,7 @@
         <!--Settings-->
         <scene sceneID="jFu-KY-y0o">
             <objects>
-                <viewController id="4u7-WK-fqv" customClass="SettingsViewController" customModule="tipsy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4u7-WK-fqv" customClass="SettingsViewController" customModule="Tipsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tnY-iT-yKI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
