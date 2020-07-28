@@ -6,7 +6,7 @@ Submitted by: **Craig Smith**
 
 Time spent: **8.5** hours spent in total
 
-<img src='tipsy-icon.png' title='Icon' alt='Tipsy Icon' width='200px'/>
+<img src='tipsy-preview-icon.png' title='Icon' alt='Tipsy Icon' width='200px'/>
 
 ## User Stories
 
