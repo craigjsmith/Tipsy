@@ -23,7 +23,7 @@
                                         <rect key="frame" x="8" y="0.0" width="359" height="162"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                         <connections>
                                             <action selector="calc:" destination="BYZ-38-t0r" eventType="editingChanged" id="yFV-bL-2f6"/>
                                             <action selector="editBillBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="Hz2-hV-Sce"/>
@@ -194,7 +194,7 @@
                                 <rect key="frame" x="198" y="151" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
                                     <action selector="changeTip0:" destination="4u7-WK-fqv" eventType="editingChanged" id="R7o-et-mEv"/>
                                 </connections>
@@ -203,7 +203,7 @@
                                 <rect key="frame" x="198" y="193" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
                                     <action selector="changeTip1:" destination="4u7-WK-fqv" eventType="editingChanged" id="1U5-we-hmK"/>
                                 </connections>
@@ -212,7 +212,7 @@
                                 <rect key="frame" x="198" y="235" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
                                     <action selector="changeTip2:" destination="4u7-WK-fqv" eventType="editingChanged" id="SPm-J0-gq7"/>
                                 </connections>
@@ -221,7 +221,7 @@
                                 <rect key="frame" x="198" y="277" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
                                     <action selector="changeTip3:" destination="4u7-WK-fqv" eventType="editingChanged" id="kZj-Kx-oit"/>
                                 </connections>
