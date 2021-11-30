@@ -15,6 +15,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var tip1Input: UITextField!
     @IBOutlet weak var tip2Input: UITextField!
     @IBOutlet weak var tip3Input: UITextField!
+    @IBOutlet weak var taxInput: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class SettingsViewController: UIViewController {
         tip1Input.text = defaults.string(forKey: "tipOption1")
         tip2Input.text = defaults.string(forKey: "tipOption2")
         tip3Input.text = defaults.string(forKey: "tipOption3")
+        taxInput.text = defaults.string(forKey: "salesTax")
     }
     
     @IBAction func changeTip0(_ sender: Any) {
@@ -42,4 +44,8 @@ class SettingsViewController: UIViewController {
         defaults.synchronize()
     }
 
+    @IBAction func changeTax(_ sender: Any) {
+        defaults.set(taxInput.text, forKey: "salesTax")
+        defaults.synchronize()
+    }
 }

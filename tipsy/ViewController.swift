@@ -15,9 +15,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalPartyLabel: UILabel!
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var partyLabel: UILabel!
+    @IBOutlet weak var taxLabel: UILabel!
     
     @IBOutlet weak var totalView: UIView!
     @IBOutlet weak var tipView: UIView!
+    @IBOutlet weak var taxView: UIView!
     @IBOutlet weak var totalPersonView: UIView!
     
     @IBOutlet weak var tipSelect: UISegmentedControl!
@@ -32,6 +34,7 @@ class ViewController: UIViewController {
         // Rounded corners on caculated totals
         totalView.layer.cornerRadius = 10
         tipView.layer.cornerRadius = 10
+        taxView.layer.cornerRadius = 10
         totalPersonView.layer.cornerRadius = 10
         
         // Configure currency formatter
@@ -47,11 +50,12 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         print("view will appear")
         
-        // Default tipping options
+        // Default tipping & tax options
         UserDefaults.standard.register(defaults: ["tipOption0" : 10])
         UserDefaults.standard.register(defaults: ["tipOption1" : 15])
         UserDefaults.standard.register(defaults: ["tipOption2" : 18])
         UserDefaults.standard.register(defaults: ["tipOption3" : 20])
+        UserDefaults.standard.register(defaults: ["salesTax" : 6])
         
         // Set segmented control tipping options
         tipSelect.setTitle(defaults.string(forKey: "tipOption0")! + "%", forSegmentAt: 0)
@@ -80,25 +84,29 @@ class ViewController: UIViewController {
         
         // UI Fade-In effect
         self.billInput.alpha = 0
-        self.totalLabel.alpha = 0
         self.totalPartyLabel.alpha = 0
-        self.tipLabel.alpha = 0
-        self.partyLabel.alpha = 0
+        self.totalLabel.alpha = 0
         self.totalView.alpha = 0
+        self.tipLabel.alpha = 0
         self.tipView.alpha = 0
+        self.totalPartyLabel.alpha = 0
         self.totalPersonView.alpha = 0
+        self.taxLabel.alpha = 0
+        self.taxView.alpha = 0
         self.tipSelect.alpha = 0
         self.partyStepper.alpha = 0
 
         UIView.animate(withDuration: 0.5) {
             self.billInput.alpha = 1.0
-            self.totalLabel.alpha = 1.0
             self.totalPartyLabel.alpha = 1.0
-            self.tipLabel.alpha = 1.0
-            self.partyLabel.alpha = 1.0
+            self.totalLabel.alpha = 1.0
             self.totalView.alpha = 1.0
+            self.tipLabel.alpha = 1.0
             self.tipView.alpha = 1.0
+            self.totalPartyLabel.alpha = 1.0
             self.totalPersonView.alpha = 1.0
+            self.taxLabel.alpha = 1.0
+            self.taxView.alpha = 1.0
             self.tipSelect.alpha = 1.0
             self.partyStepper.alpha = 1.0
         }
@@ -122,15 +130,19 @@ class ViewController: UIViewController {
         
         // Tip calculation
         let tip = bill * tipAmounts[tipSelect.selectedSegmentIndex]
+
+        // Tax calculation
+        let tax = bill * defaults.double(forKey: "salesTax")/100
         
-        // Total calculation (bill + tip)
-        let total = bill + tip
+        // Total calculation (bill + tip + tax)
+        let total = bill + tip + tax
         
         // Total Per Person calculation (total / party size)
         let totalParty = total / partySize
         
         // Set outputs to calculated values
         tipLabel.text = currencyFormatter.string(from: NSNumber(value: tip))!
+        taxLabel.text = currencyFormatter.string(from: NSNumber(value: tax))!
         totalLabel.text = currencyFormatter.string(from: NSNumber(value: total))!
         totalPartyLabel.text = currencyFormatter.string(from: NSNumber(value: totalParty))!
         partyLabel.text = String(format:"%.0f", partySize)
@@ -173,6 +185,7 @@ class ViewController: UIViewController {
      */
     func reset() {
         tipLabel.text = currencyFormatter.string(from: NSNumber(value: 0))!
+        taxLabel.text = currencyFormatter.string(from: NSNumber(value: 0))!
         totalLabel.text = currencyFormatter.string(from: NSNumber(value: 0))!
         totalPartyLabel.text = currencyFormatter.string(from: NSNumber(value: 0))!
     }
